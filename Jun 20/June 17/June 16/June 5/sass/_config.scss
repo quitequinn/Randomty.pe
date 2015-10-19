@@ -1,0 +1,87 @@
+//
+// CONFIGURATION SETTINGS
+// Adjust colors, font stacks, breakpoints and sizing.
+//
+
+@font-face {
+  font-family: 'Random';
+  src: url('Random-Regular_NEW4.eot'); /* IE9 Compat Modes */
+  src: url('Random-Regular_NEW4.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Random-Regular_NEW4.woff') format('woff'), /* Modern Browsers */
+       url('Random-Regular_NEW4.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Random-Regular_NEW4.svg#64663f4646781c9c0110838b905daa23') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Resolution';
+  src: url('Resolution-Bold.eot'); /* IE9 Compat Modes */
+  src: url('Resolution-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Resolution-Bold.woff') format('woff'), /* Modern Browsers */
+       url('Resolution-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Resolution-Bold.svg#b9811c723227d858b8a47f2ff635c42c') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  700;
+}
+
+@font-face {
+  font-family: 'Resolution';
+  src: url('Resolution-Regular.eot'); /* IE9 Compat Modes */
+  src: url('Resolution-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Resolution-Regular.woff') format('woff'), /* Modern Browsers */
+       url('Resolution-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Resolution-Regular.svg#d036d10a7f53a5fda6afd19adaa44cac') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+@font-face {
+  font-family: 'TDF Icons';
+  src: url('TDF Iconfont.eot'); /* IE9 Compat Modes */
+  src: url('TDF Iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('TDF Iconfont.woff') format('woff'), /* Modern Browsers */
+       url('TDF Iconfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('TDF Iconfont.svg#feb9a93716aa3cb03600aa69d00abc3f') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+
+
+// Colors
+$color-primary: #0088cc;
+$color-black: #272727;
+$color-white: #ffffff;
+
+$color-success: #377f31; // Green
+$color-danger: #880e14; // Red
+$color-warning: #dba909; // Yellow
+$color-code: #dd1144;
+
+$color-gray-dark: #808080;
+$color-gray-light: #f4f4f4;
+
+
+// Font Stacks
+$font-primary: 'Resolution', sans-serif;
+$font-secondary: 'Random', sans-serif;
+$font-monospace: Menlo, Monaco, "Courier New", monospace;
+
+
+// Breakpoints
+$bp-xsmall: 90em;
+$bp-small: 90em;
+$bp-medium: 90em;
+$bp-large: 90em;
+$bp-xlarge: 90em;
+
+
+// Sizing
+$font-base: 120%;
+$spacing: 1.5625em;
+$container-max: 51em;
+$grid-margins: 1.4%;

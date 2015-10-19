@@ -1,0 +1,1525 @@
+@font-face {
+  font-family: 'Random';
+  src: url("Random-Regular_NEW4.eot");
+  /* IE9 Compat Modes */
+  src: url("Random-Regular_NEW4.eot?#iefix") format("embedded-opentype"), url("Random-Regular_NEW4.woff") format("woff"), url("Random-Regular_NEW4.ttf") format("truetype"), url("Random-Regular_NEW4.svg#64663f4646781c9c0110838b905daa23") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Resolution';
+  src: url("Resolution-Bold.eot");
+  /* IE9 Compat Modes */
+  src: url("Resolution-Bold.eot?#iefix") format("embedded-opentype"), url("Resolution-Bold.woff") format("woff"), url("Resolution-Bold.ttf") format("truetype"), url("Resolution-Bold.svg#b9811c723227d858b8a47f2ff635c42c") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Resolution';
+  src: url("Resolution-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("Resolution-Regular.eot?#iefix") format("embedded-opentype"), url("Resolution-Regular.woff") format("woff"), url("Resolution-Regular.ttf") format("truetype"), url("Resolution-Regular.svg#d036d10a7f53a5fda6afd19adaa44cac") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'TDF Icons';
+  src: url("TDF Iconfont.eot");
+  /* IE9 Compat Modes */
+  src: url("TDF Iconfont.eot?#iefix") format("embedded-opentype"), url("TDF Iconfont.woff") format("woff"), url("TDF Iconfont.ttf") format("truetype"), url("TDF Iconfont.svg#feb9a93716aa3cb03600aa69d00abc3f") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400;
+}
+/* =============================================================
+	CSS RESET
+	Meyer's CSS Reset, Normalized.css, and custom code.
+ * ============================================================= */
+/* Mobile Screen Resizing */
+@-webkit-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+@-moz-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+@-ms-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+@-o-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+@viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+/* Remove browser defaults */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+button, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Resolution", sans-serif;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* Add box sizing to everything
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*  Set display type for HTML5 semantic elements */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/*  Force scrollbar display to prevent jumping on pages.
+ *  Fix text resize bug on mobile devices. */
+html {
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/*  Display audio, canvas, and video elements as inline block elements. */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/*  Prevent modern browsers from displaying audio without controls. */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/*  Prevent img and video elements from spilling
+ *  outside of the page on smaller screens. */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/*  Prevent iframe, object, and embed elements from
+ *  spilling outside of the page on smaller screens. */
+iframe,
+object,
+embed {
+  max-width: 100%;
+}
+
+/* Address [hidden] styling not present in IE 8/9.
+ * Hide the template element in IE, Safari, and Firefox < 22. */
+[hidden],
+template {
+  display: none;
+  visibility: hidden;
+}
+
+/*  Prevents IE from making scaled images look like crap */
+img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/*  Address outline inconsistency between Chrome and other browsers. */
+a:focus,
+button:focus {
+  outline: thin dotted;
+  outline: 0.3125em auto -webkit-focus-ring-color;
+  outline-offset: -0.15625em;
+}
+
+/*  Improve readability when focused and also mouse hovered in all browsers. */
+a:hover,
+a:active {
+  outline: 0;
+}
+
+/* =============================================================
+	THE GRID
+	Structure and layout.
+ * ============================================================= */
+/*  Mobile-first. Single-column layout by default
+ *  Container sets the maximum page width. Adjust as needed. */
+.container {
+  max-width: 51em;
+  width: 88%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*  Still mostly single-column.
+ *  Option to activate grid on small screens.
+ *  Two-column layout for .grid-img. */
+@media (min-width: 90em) {
+  .row {
+    margin-left: -1.4%;
+    margin-right: -1.4%;
+  }
+
+  .grid-fourth,
+  .grid-third,
+  .grid-half,
+  .grid-two-thirds,
+  .grid-three-fourths,
+  .grid-full,
+  .grid-img {
+    float: left;
+    width: 100%;
+    padding-left: 1.4%;
+    padding-right: 1.4%;
+  }
+
+  /*  Reverses order of grid for content choreography */
+  .grid-flip {
+    float: right;
+  }
+
+  /*  Optionally show grid for small screens */
+  .row-start-xsmall .grid-fourth {
+    width: 25%;
+  }
+
+  .row-start-xsmall .grid-third {
+    width: 33.33333333333%;
+  }
+
+  .row-start-xsmall .grid-half,
+  .grid-img {
+    width: 50%;
+  }
+
+  .row-start-xsmall .grid-two-thirds {
+    width: 66.666666666667%;
+  }
+
+  .row-start-xsmall .grid-three-fourths {
+    width: 75%;
+  }
+}
+/*  Still mostly single-column.
+ *  Option to activate grid on medium screens.
+ *  Three-column layout for .grid-img. */
+@media (min-width: 90em) {
+  /*  Show grid for small screens */
+  .row-start-small .grid-fourth {
+    width: 25%;
+  }
+
+  .row-start-small .grid-third,
+  .grid-img {
+    width: 33.33333333333%;
+  }
+
+  .row-start-small .grid-half {
+    width: 50%;
+  }
+
+  .row-start-small .grid-two-thirds {
+    width: 66.666666666667%;
+  }
+
+  .row-start-small .grid-three-fourths {
+    width: 75%;
+  }
+}
+/*  Full 6-column grid.
+ *  Four-column layout for .grid-img. */
+@media (min-width: 90em) {
+  .grid-fourth,
+  .grid-img {
+    width: 25%;
+  }
+
+  .grid-third {
+    width: 33.33333333333%;
+  }
+
+  .grid-half {
+    width: 50%;
+  }
+
+  .grid-two-thirds {
+    width: 66.666666666667%;
+  }
+
+  .grid-three-fourths {
+    width: 75%;
+  }
+
+  /*  Offets let you shift grid elements to the right
+   *  but stay aligned to the grid. */
+  .offset-fourth {
+    margin-left: 25%;
+  }
+
+  .offset-third {
+    margin-left: 33.33333333333%;
+  }
+
+  .offset-half {
+    margin-left: 50%;
+  }
+
+  .offset-two-thirds {
+    margin-left: 66.666666666667%;
+  }
+
+  .offset-three-fourths {
+    margin-left: 75%;
+  }
+}
+/* Add clearfix */
+/* =============================================================
+	TYPOGRAPHY
+	Sets font styles for entire site.
+ * ============================================================= */
+body {
+  font-family: "Resolution", sans-serif;
+  font-size: 120%;
+  line-height: 1.5;
+  color: #272727;
+  background: white;
+}
+@media (min-width: 1250px) {
+  body {
+    font-size: 144%;
+  }
+}
+
+p {
+  margin-bottom: 0.78125em;
+}
+
+@media (min-width: 90em) {
+  body {
+    line-height: 1.5625;
+  }
+}
+i, .italic {
+  font-style: italic;
+}
+
+b, .bold {
+  font-weight: bold;
+}
+
+/*  Sizes
+ *  For smaller and larger text */
+.text-small {
+  font-size: 0.9375em;
+}
+
+.text-tall {
+  font-size: 1.1875em;
+  line-height: 1.4;
+}
+
+@media (min-width: 90em) {
+  .text-tall {
+    font-size: 1.3125em;
+  }
+}
+/*  Colors
+ *  For alternate text colors */
+.text-muted {
+  color: gray;
+}
+
+/*  Links
+ *  Hyperlink styling */
+a {
+  color: #0088cc;
+  text-decoration: none;
+  word-wrap: break-word;
+}
+
+a:hover {
+  color: #005580;
+  text-decoration: none;
+}
+
+a img {
+  border: none;
+  background: none;
+}
+
+/*  Prevents border/background on linked image hover.
+ *  Adds slight opacity. */
+a:hover img {
+  border: none;
+  background: none;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+/*  Lists
+ *  Styling for lists */
+ul,
+ol,
+dl {
+  margin-bottom: 1.5625em;
+  margin-left: 2em;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+dl {
+  margin-left: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+/*  Removes list styling.
+ *  For semantic reasons, should only
+ *  be used on unordered lists. */
+.list-unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+/*  Headings
+ *  h1 through h6 styling
+ *  Heading class lets you use one heading type for semantics
+ *  but style it as another heading type. */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.4;
+  font-weight: normal;
+  margin-bottom: 1em;
+  padding-top: 1em;
+  word-wrap: break-word;
+}
+
+.fa {
+  font-size: 1.875em;
+}
+
+h1,
+.fa-play-circle {
+  font-size: 3.75em;
+}
+
+h1,
+.h1 {
+  font-size: 2.5em;
+  padding-top: .5em;
+  font-family: "Random", sans-serif;
+}
+
+h2,
+.h2 {
+  font-size: 1.375em;
+}
+
+h3,
+.h3 {
+  font-size: 0.875em;
+}
+
+h4, h5, h6,
+.h4, .h5, .h6 {
+  font-size: 0.625em;
+}
+
+h4,
+.h4 {
+  text-transform: uppercase;
+}
+
+@media (min-width: 90em) {
+  h1,
+  .h1 {
+    font-size: 3.75em;
+  }
+
+  .fa-play-circle {
+    font-size: 7.5em;
+  }
+}
+@media (max-width: 90em) {
+  h2,
+  .h2 {
+    font-size: 1.375em;
+  }
+
+  h3,
+  .h3 {
+    font-size: 0.875em;
+  }
+}
+/*  Lines, Quotes and Emphasis */
+/*  Lines */
+hr {
+  margin: 2em auto;
+  border: 0;
+  border-top: 0.0725em solid #f4f4f4;
+  border-bottom: 0 solid white;
+}
+
+/*  Bold */
+strong {
+  font-weight: bold;
+}
+
+/*  Italics */
+em {
+  font-style: italic;
+}
+
+/*  Subscript & Superscript */
+sub,
+sup {
+  position: relative;
+  font-size: 85%;
+  font-weight: bold;
+  line-height: 0;
+  vertical-align: baseline;
+  margin-left: 0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+b {
+  font-weight: 700;
+}
+
+/*  Highlighting colors */
+::-moz-selection {
+  color: white;
+  background: #0088cc;
+}
+::selection {
+  color: white;
+  background: #0088cc;
+}
+
+::-moz-selection {
+  color: white;
+  background: #0088cc;
+}
+
+/*  Blockquotes */
+blockquote {
+  border-left: 0.25em solid #f4f4f4;
+  margin-bottom: 1.5625em;
+  padding-left: 1.5625em;
+  padding-right: 1.5625em;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* Colours */
+.text-primary {
+  color: #0088cc;
+}
+
+.text-black {
+  color: #272727;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-success {
+  color: #377f31;
+}
+
+.text-danger {
+  color: #880e14;
+}
+
+.text-warning {
+  color: #dba909;
+}
+
+.text-code {
+  color: #dd1144;
+}
+
+.text-darkgrey {
+  color: gray;
+}
+
+.text-lightgrey {
+  color: #f4f4f4;
+}
+
+/* =============================================================
+	CODE
+	Styling for code and preformatted text.
+ * ============================================================= */
+/* @todo Add variables for code elements */
+code,
+pre {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: 0.875em;
+  border-radius: 0.0725em;
+}
+
+code {
+  color: #dd1144;
+  background-color: white;
+  padding: 0.25em;
+}
+
+pre {
+  display: block;
+  margin-bottom: 1.5625em;
+  line-height: 1.5;
+  background-color: white;
+  padding: 0.8125em;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+pre code {
+  font-size: 1em;
+  padding: 0;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+}
+
+/* =============================================================
+	BUTTONS
+	Styling for CSS buttons.
+ * ============================================================= */
+.btn {
+  display: inline-block;
+  font-size: 0.9375em;
+  padding: 0.5em 0.6875em;
+  line-height: 1.2;
+  font-weight: normal;
+  background-color: #0088cc;
+  border: 0.0725em solid #0088cc;
+  border-radius: 0.0725em;
+  margin-right: 0.3125em;
+  margin-bottom: 0.3125em;
+}
+
+.btn,
+.btn:hover,
+a .btn:hover,
+.btn.active {
+  color: white;
+}
+
+.btn:hover,
+a .btn:hover,
+.btn.active {
+  background-color: #005580;
+  border-color: #005580;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background-color: gray;
+  border-color: gray;
+}
+
+.btn-secondary:hover,
+a .btn-secondary:hover,
+.btn-secondary.active {
+  background-color: #5a5a5a;
+  border-color: #5a5a5a;
+}
+
+.btn:active,
+.btn.active {
+  -webkit-box-shadow: inset 0 0.15625em 0.25em rgba(0, 0, 0, 0.15), 0 0.0725em 0.15625em rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0.15625em 0.25em rgba(0, 0, 0, 0.15), 0 0.0725em 0.15625em rgba(0, 0, 0, 0.05);
+  outline: 0;
+}
+
+.btn.disabled,
+.btn[disabled] {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-large {
+  padding: 0.6875em 0.9375em;
+  font-size: 1em;
+  line-height: normal;
+}
+
+.btn-block,
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block {
+  display: block;
+  width: 100%;
+  margin-right: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+button,
+.btn {
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  /* Override default Webkit/Firefox button styling */
+  background-image: none;
+  -webkit-appearance: none;
+}
+
+.btn:last-child,
+input.btn {
+  margin-right: 0;
+}
+
+/* =============================================================
+	FORMS
+	Styling for form elements.
+ * ============================================================= */
+/* @todo Integrate form styling with _config options */
+form,
+fieldset {
+  margin-bottom: 1.5625em;
+}
+
+legend,
+label {
+  display: block;
+  font-weight: normal;
+  padding: 0;
+  margin-bottom: 0.3125em;
+}
+
+/* @todo Adjust form colors based on Sass variables */
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  font: inherit;
+  line-height: 1.5;
+  color: #555555;
+  margin-bottom: 1.1875em;
+  padding: 0.3125em;
+  border: 0.0725em solid #b8b8b8;
+  border-radius: 0.0725em;
+}
+
+form button,
+form .button {
+  margin-bottom: 1.1875em;
+}
+
+textarea {
+  height: 12em;
+}
+
+input[type="image"],
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin-bottom: 0.3125em;
+  cursor: pointer;
+}
+
+input:focus,
+textarea:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 0.0725em 0.0725em rgba(0, 0, 0, 0.075), 0 0 0.5em rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 0.0725em 0.0725em rgba(0, 0, 0, 0.075), 0 0 0.5em rgba(82, 168, 236, 0.6);
+  outline: 0;
+  outline: thin dotted \9;
+}
+
+input[type="file"]:focus,
+input[type="checkbox"]:focus,
+select:focus {
+  outline: thin dotted;
+  outline: 0.3125em auto -webkit-focus-ring-color;
+  outline-offset: -0.125em;
+}
+
+/*  Inline Inputs */
+.input-inline {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
+
+/*  Condensed Inputs */
+.input-condensed {
+  padding: 0.0725em 0.3125em;
+  font-size: 0.9375em;
+}
+
+@media (min-width: 90em) {
+  input, textarea, select {
+    line-height: 1.5625;
+  }
+}
+/* =============================================================
+	ALIGNMENT, SPACING & VISIBILITY
+	Override default alignment, spacing and visibilty.
+ * ============================================================= */
+/*  Text alignment */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/*  Floats */
+.float-left {
+  float: left;
+}
+
+.float-center {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.float-right {
+  float: right;
+}
+
+/*  Spacing */
+.no-space {
+  margin: 0;
+  padding: 0;
+}
+
+.no-space-bottom {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.no-space-top {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.space-bottom {
+  margin-bottom: 2em;
+}
+
+.space-bottom-small {
+  margin-bottom: 0.5em;
+  padding-bottom: 0;
+}
+
+.space-top {
+  padding-top: 0.8125em;
+}
+
+/*  Screen Reader Text */
+.screen-reader {
+  position: absolute;
+  top: -9999em;
+  left: -9999em;
+}
+
+/*  Clearfix */
+.group:before, .container:before,
+.row:before,
+.group:after,
+.container:after,
+.row:after {
+  display: table;
+  content: "";
+}
+
+.group:after, .container:after,
+.row:after {
+  clear: both;
+}
+
+/* =============================================================
+	PRINT STYLES
+	Styling for printed content. Adapted from HTML5BP.
+	http://html5boilerplate.com
+ * ============================================================= */
+@media print {
+  /*  Universal selector.
+   *  Reset all content to transparent background,
+   *  black color, and remove box and text shadows. */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /*  Specifies page margin */
+  @page {
+    margin: 0.5cm;
+  }
+  /*  Underline all links */
+  a, a:visited {
+    text-decoration: underline;
+  }
+
+  /*  Show URL after links */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /*  Don't show URL for internal links */
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  /*  Specifies the minimum number of lines to print at the top and bottom of a page. */
+  p, h1, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /*  Avoid inserting a page break after headers */
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+
+  /*  Change border color on blockquotes and preformatted text.
+   *  Avoid page breaks inside the content */
+  pre, blockquote {
+    border-color: #999;
+    page-break-inside: avoid;
+  }
+
+  /*  Displayed as a table header row group */
+  thead {
+    display: table-header-group;
+  }
+
+  /*  Avoid inserting a page break inside table rows and images */
+  tr, img {
+    page-break-inside: avoid;
+  }
+}
+/* YOUR OWN STYLES */
+html {
+  font-smoothing: subpixel-antialiased;
+  text-rendering: optimizeLegibility;
+  background: #f4f4f4;
+  width: 100%;
+}
+
+a, .linkstyle {
+  color: #272727;
+}
+
+body, footer {
+  background: #f4f4f4;
+}
+
+.yourtextwrap {
+  width: 100%;
+  display: table;
+}
+
+.yourtext {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.text {
+  word-break: break-all;
+  text-align: center;
+  line-height: 1;
+  padding: 1em;
+  color: #272727;
+  width: 100%;
+  margin-top: 1em;
+}
+
+.text:focus {
+  outline: none;
+}
+
+.social a, .tdffont {
+  font-family: 'TDF Icons';
+}
+
+.social h6 {
+  font-family: "Resolution", sans-serif;
+  text-align: right;
+}
+
+.credit, .social {
+  min-width: 50%;
+  float: right;
+  line-height: 2.9em;
+}
+
+.social a {
+  text-align: right;
+  font-size: 2.36em;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.info a {
+  display: inline;
+}
+
+.linkstyle {
+  cursor: pointer;
+}
+
+a:hover, .linkstyle:hover {
+  color: #272727;
+}
+
+a:hover svg#cloud {
+  fill: #272727;
+}
+
+svg#cloud, svg#cloud2 {
+  width: 1.35em;
+  height: 1.5em;
+  margin-bottom: -7px;
+}
+
+svg#cloud2 {
+  margin-left: -2em;
+  position: relative;
+}
+
+@-webkit-keyframes bob {
+  0% {
+    top: 0px;
+  }
+
+  50% {
+    top: 3px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes bob {
+  0% {
+    top: 0px;
+  }
+
+  50% {
+    top: 3px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+.animwrap:hover a svg#cloud2 {
+  -webkit-animation: bob linear 1s infinite;
+  animation: bob linear 1s infinite;
+}
+
+.share {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  -webkit-perspective: 1000px;
+  -ms-perspective: 1000px;
+  perspective: 1000px;
+  display: none;
+}
+
+.introblock {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  -webkit-perspective: 1000px;
+  -ms-perspective: 1000px;
+  perspective: 1000px;
+  opacity: 0.9;
+}
+
+.intro {
+  width: 50%;
+  max-height: 85%;
+  display: block;
+  position: fixed;
+  margin: 5% 25%;
+  background: white;
+  padding: 1em;
+  overflow: scroll;
+}
+
+.options {
+  width: 50%;
+  height: 50%;
+  display: block;
+  position: fixed;
+  margin: 15% 25%;
+}
+
+.shareblock {
+  width: 50%;
+  width: -webkit-calc(50% - 8px);
+  width: calc(50% - 8px);
+  position: relative;
+  height: 50%;
+  background: white;
+  float: left;
+  opacity: 0.9;
+  margin: -webkit-calc(2px + 2px);
+  margin: calc(2px + 2px);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.shareblock:hover {
+  -webkit-transform: translateZ(80px);
+  -ms-transform: translateZ(80px);
+  transform: translateZ(80px);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.shareiconwrap {
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+.shareiconwrap i {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 4em;
+}
+
+.sharebackground, .introbackground {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.social a {
+  float: right;
+  height: 1em;
+}
+
+.social a:hover {
+  border-bottom: 2px solid #272727;
+}
+
+footer .container {
+  padding-bottom: 1em;
+}
+
+.color {
+  width: 5.5em;
+  cursor: pointer;
+  font-weight: 700;
+  top: 12px;
+  line-height: 1.2;
+  letter-spacing: 5px;
+  margin: 0 1em;
+  display: inline-block;
+  padding: .8em .4em .8em .8em;
+  position: relative;
+  background: none;
+  color: #272727;
+}
+
+.infoclick {
+  top: 0;
+  right: 15px;
+  position: fixed;
+  line-height: 0;
+  font-size: 30px;
+  width: 20px;
+  height: 20px;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+.bl0:after {
+  border-left: 1px solid;
+  content: "";
+  width: 0;
+  margin: 0;
+  -webkit-transition: none !important;
+  transition: none !important;
+  display: inline;
+  opacity: 0;
+}
+
+.bl0:hover:after {
+  -webkit-animation: blink .8s infinite;
+  animation: blink .8s infinite;
+}
+
+h1:focus .bl0:after, h1:active .bl0:after {
+  opacity: 0;
+  display: none;
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.seehidden {
+  display: none;
+}
+
+.show .seemore {
+  display: none;
+}
+.show .seehidden {
+  display: block;
+}
+
+.introblock {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.close {
+  display: block;
+  font-size: 2em;
+  float: right;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-align: center;
+  top: .2em;
+  left: 0.33em;
+  position: relative;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+@-webkit-keyframes bobing {
+  0% {
+    top: 0px;
+    -webkit-box-shadow: 1px 1px 0px 0px;
+    box-shadow: 1px 1px 0px 0px;
+  }
+
+  25% {
+    top: -3px;
+    -webkit-box-shadow: 0px 0px 0px 0px;
+    box-shadow: 0px 0px 0px 0px;
+  }
+
+  50% {
+    top: 0px;
+    -webkit-box-shadow: 1px 1px 0px 0px;
+    box-shadow: 1px 1px 0px 0px;
+  }
+
+  75% {
+    top: 3px;
+    -webkit-box-shadow: 2px 2px 0px 0px;
+    box-shadow: 2px 2px 0px 0px;
+  }
+
+  100% {
+    top: 0;
+    -webkit-box-shadow: 1px 1px 0px 0px;
+    box-shadow: 1px 1px 0px 0px;
+  }
+}
+
+@keyframes bobing {
+  0% {
+    top: 0px;
+    -webkit-box-shadow: 1px 1px 0px 0px;
+    box-shadow: 1px 1px 0px 0px;
+  }
+
+  25% {
+    top: -3px;
+    -webkit-box-shadow: 0px 0px 0px 0px;
+    box-shadow: 0px 0px 0px 0px;
+  }
+
+  50% {
+    top: 0px;
+    -webkit-box-shadow: 1px 1px 0px 0px;
+    box-shadow: 1px 1px 0px 0px;
+  }
+
+  75% {
+    top: 3px;
+    -webkit-box-shadow: 2px 2px 0px 0px;
+    box-shadow: 2px 2px 0px 0px;
+  }
+
+  100% {
+    top: 0;
+    -webkit-box-shadow: 1px 1px 0px 0px;
+    box-shadow: 1px 1px 0px 0px;
+  }
+}
+@-webkit-keyframes bobingtwo {
+  0% {
+    margin-top: 0px;
+    -webkit-box-shadow: 1px 1px 0px 0px;
+    box-shadow: 1px 1px 0px 0px;
+  }
+
+  25% {
+    margin-top: -3px;
+    -webkit-box-shadow: 0px 0px 0px 0px;
+    box-shadow: 0px 0px 0px 0px;
+  }
+
+  50% {
+    margin-top: 0px;
+    -webkit-box-shadow: 1px 1px 0px 0px;
+    box-shadow: 1px 1px 0px 0px;
+  }
+
+  75% {
+    margin-top: 3px;
+    -webkit-box-shadow: 2px 2px 0px 0px;
+    box-shadow: 2px 2px 0px 0px;
+  }
+
+  100% {
+    margin-top: 0;
+    -webkit-box-shadow: 1px 1px 0px 0px;
+    box-shadow: 1px 1px 0px 0px;
+  }
+}
+@keyframes bobingtwo {
+  0% {
+    margin-top: 0px;
+    -webkit-box-shadow: 1px 1px 0px 0px;
+    box-shadow: 1px 1px 0px 0px;
+  }
+
+  25% {
+    margin-top: -3px;
+    -webkit-box-shadow: 0px 0px 0px 0px;
+    box-shadow: 0px 0px 0px 0px;
+  }
+
+  50% {
+    margin-top: 0px;
+    -webkit-box-shadow: 1px 1px 0px 0px;
+    box-shadow: 1px 1px 0px 0px;
+  }
+
+  75% {
+    margin-top: 3px;
+    -webkit-box-shadow: 2px 2px 0px 0px;
+    box-shadow: 2px 2px 0px 0px;
+  }
+
+  100% {
+    margin-top: 0;
+    -webkit-box-shadow: 1px 1px 0px 0px;
+    box-shadow: 1px 1px 0px 0px;
+  }
+}
+.info {
+  margin-bottom: 4em;
+}
+.info h3 .linkstyle, .info h3 .color, .info h3 .animwrap {
+  border: 2px solid;
+  border-radius: 2px;
+  -webkit-box-shadow: 1px 1px 0px 0px;
+  box-shadow: 1px 1px 0px 0px;
+}
+.info h3 .linkstyle {
+  position: fixed;
+  top: 20%;
+  left: 5%;
+  -webkit-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+  z-index: 1;
+  background: #f4f4f4;
+}
+.info h3 .color {
+  position: fixed;
+  bottom: 15%;
+  top: initial;
+  right: 5%;
+  -webkit-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  transform: rotate(5deg);
+}
+.info h3 .animwrap {
+  position: relative;
+}
+.info h3 .animwrap:hover {
+  -webkit-animation: bobing .5s infinite;
+  animation: bobing .5s infinite;
+}
+.info h3 .linkstyle:hover {
+  -webkit-animation: bobingtwo .5s infinite;
+  animation: bobingtwo .5s infinite;
+}
+.info h3 .linkstyle, .info h3 .animwrap {
+  padding: .5em 1em;
+}
+.info .tdffont {
+  font-size: 1.6em;
+}
+
+@media (max-width: 700px) {
+  .credit, .social, .infowrap {
+    min-width: 100%;
+    text-align: center;
+  }
+
+  .credit h6 {
+    line-height: 3;
+  }
+
+  .social {
+    line-height: 1.15;
+  }
+  .social h6 {
+    margin: 1em 0 3em;
+    text-align: center;
+  }
+
+  .social a {
+    float: initial;
+  }
+}
+@media (max-width: 820px) {
+  .info a {
+    width: 100%;
+    line-height: 2em;
+  }
+
+  .color {
+    display: block;
+    margin: 1.1em auto 4em;
+  }
+
+  .intro {
+    width: 90%;
+    max-height: 90%;
+    margin: 5%;
+  }
+
+  .options {
+    width: 80%;
+    height: 80%;
+    display: block;
+    position: fixed;
+    margin: 10% 10%;
+  }
+}

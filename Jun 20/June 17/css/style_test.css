@@ -1,0 +1,273 @@
+@font-face {
+  font-family: 'Random';
+  src: url("Random-Regular_NEW4.eot");
+  /* IE9 Compat Modes */
+  src: url("Random-Regular_NEW4.eot?#iefix") format("embedded-opentype"), url("Random-Regular_NEW4.woff") format("woff"), url("Random-Regular_NEW4.ttf") format("truetype"), url("Random-Regular_NEW4.svg#64663f4646781c9c0110838b905daa23") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Resolution';
+  src: url("Resolution-Bold.eot");
+  /* IE9 Compat Modes */
+  src: url("Resolution-Bold.eot?#iefix") format("embedded-opentype"), url("Resolution-Bold.woff") format("woff"), url("Resolution-Bold.ttf") format("truetype"), url("Resolution-Bold.svg#b9811c723227d858b8a47f2ff635c42c") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Resolution';
+  src: url("Resolution-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("Resolution-Regular.eot?#iefix") format("embedded-opentype"), url("Resolution-Regular.woff") format("woff"), url("Resolution-Regular.ttf") format("truetype"), url("Resolution-Regular.svg#d036d10a7f53a5fda6afd19adaa44cac") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400;
+}
+
+
+
+/* =============================================================
+	CSS RESET
+	Meyer's CSS Reset, Normalized.css, and custom code.
+ * ============================================================= */
+/* Mobile Screen Resizing */
+@-webkit-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+@-moz-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+@-ms-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+@-o-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+@viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+/* Remove browser defaults */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+button, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Resolution", sans-serif;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* Add box sizing to everything
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*  Set display type for HTML5 semantic elements */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/*  Force scrollbar display to prevent jumping on pages.
+ *  Fix text resize bug on mobile devices. */
+html {
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/*  Display audio, canvas, and video elements as inline block elements. */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/*  Prevent modern browsers from displaying audio without controls. */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/*  Prevent img and video elements from spilling
+ *  outside of the page on smaller screens. */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/*  Prevent iframe, object, and embed elements from
+ *  spilling outside of the page on smaller screens. */
+iframe,
+object,
+embed {
+  max-width: 100%;
+}
+
+/* Address [hidden] styling not present in IE 8/9.
+ * Hide the template element in IE, Safari, and Firefox < 22. */
+[hidden],
+template {
+  display: none;
+  visibility: hidden;
+}
+
+/*  Prevents IE from making scaled images look like crap */
+img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/*  Address outline inconsistency between Chrome and other browsers. */
+a:focus,
+button:focus {
+  outline: thin dotted;
+  outline: 0.3125em auto -webkit-focus-ring-color;
+  outline-offset: -0.15625em;
+}
+
+/*  Improve readability when focused and also mouse hovered in all browsers. */
+a:hover,
+a:active {
+  outline: 0;
+}
+
+/* =============================================================
+	THE GRID
+	Structure and layout.
+ * ============================================================= */
+/*  Mobile-first. Single-column layout by default
+ *  Container sets the maximum page width. Adjust as needed. */
+.container {
+  max-width: 51em;
+  width: 88%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*  Still mostly single-column.
+ *  Option to activate grid on small screens.
+ *  Two-column layout for .grid-img. */
+@media (min-width: 20em) {
+  .row {
+    margin-left: -1.4%;
+    margin-right: -1.4%;
+  }
+
+  .grid-fourth,
+  .grid-third,
+  .grid-half,
+  .grid-two-thirds,
+  .grid-three-fourths,
+  .grid-full,
+  .grid-img {
+    float: left;
+    width: 100%;
+    padding-left: 1.4%;
+    padding-right: 1.4%;
+  }
+
+  /*  Reverses order of grid for content choreography */
+  .grid-flip {
+    float: right;
+  }
+
+  /*  Optionally show grid for small screens */
+  .row-start-xsmall .grid-fourth {
+    width: 25%;
+  }
+
+  .row-start-xsmall .grid-third {
+    width: 33.33333333333%;
+  }
+
+  .row-start-xsmall .grid-half,
+  .grid-img {
+    width: 50%;
+  }
+
+  .row-start-xsmall .grid-two-thirds {
+    width: 66.666666666667%;
+  }
+
+  .row-start-xsmall .grid-three-fourths {
+    width: 75%;
+  }
+}
+/*  Still mostly single-column.
+ *  Option to activate grid on medium screens.
+ *  Three-column layout for .grid-img. */
+@media (min-width: 30em) {
+  /*  Show grid for small screens */
+  .row-start-small .grid-fourth {
+    width: 25%;
+  }
+
+  .row-start-small .grid-third,
+  .grid-img {
+    width: 33.33333333333%;
+  }
+
+  .row-start-small .grid-half {
+    width: 50%;
+  }
+
+  .row-start-small .grid-two-thirds {
+    width: 66.666666666667%;
+  }
+
+  .row-start-small .grid-three-fourths {
+    width: 75%;
+  }
+}
+
+
+html{
+  font-smoothing: subpixel-antialiased;
+  text-rendering: optimizeLegibility;
+  background: $color-gray-light;
+  width: 100%;
+  overflow-x: hidden;
+}
+.yourtextwrap{
+  width: 100%;
+  height: 100%;
+  display: table;
+  border-bottom: 1px solid $color-black;
+
+}
+.yourtext{
+  display:table-cell;
+  vertical-align: middle;
+}
+.text{
+
+  text-align:center;
+  padding: 1em;
+  color: $color-black;
+  width: 100%;
+}
